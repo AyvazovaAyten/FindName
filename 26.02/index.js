@@ -1,11 +1,11 @@
-function sameLetter(name, testname) {
+function sameLetter(name, testname) { 
     let count = 0;
     let a = 0;
-    for (let i = 0; i < name.length; i++) {
-        for (let j = a; j < testname.length; j++) {
-            if (name.toLowerCase()[i] === testname.toLowerCase()[j]) {
+    for (let i = 0; i < testname.length; i++) {
+        for (let j = a; j < name.length; j++) {
+            if (testname.toLowerCase()[i] === name.toLowerCase()[j]) {
                 count++;
-                a = i + 1;
+                a = j+1;
                 break;
             }
         }
@@ -21,15 +21,16 @@ function findName(myarr, name) {
         });
         const maxcount = Math.max(...newarr);
         if (maxcount >= 2) {
+            console.log(newarr);
             return myarr[newarr.indexOf(maxcount)];
         }
     }
     return "Not Found";
 }
-const names = ['Ayten', 'Aydan', 'Aysen', 'Gulten', 'Elvin', 'Pervin', 'Anar'];
-console.log(findName(names, 'ervin'));
-console.log(findName(names, 'a'));
-console.log(findName(names, 'aa'));
-console.log(findName(names, 'Afs'));
-console.log(findName(names, 'Gten'));
+const names = ['Ayten', 'Aydan', 'Aysen', 'Qezenfer', 'Qelender', 'Gulten', 'Elvin', 'Pervin', 'Anar'];
+console.log(findName(names, 'evin'));
+console.log(findName(names, 'prvin'));
+console.log(findName(names, 'abbb'));
+console.log(findName(names, 'Qender'));
+console.log(findName(names, 'ayt'));
 
